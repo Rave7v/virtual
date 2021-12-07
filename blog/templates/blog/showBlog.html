@@ -90,11 +90,12 @@
                         <div class="card shadow-sm">
                             <img class="bd-placeholder-img card-img-top" src="{{blog.image.url}}" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                             <title></title>
-                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em"> <a href="{% url 'detalle' blog.id%}">{{blog.titulo}}</a> </text>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em"> {{blog.titulo}} </text>
 
                             <div class="card-body">
                                 <p class="card-text">{{blog.texto}}</p>
                                 <div class="d-flex justify-content-between align-items-center">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'detalle' blog.id%}">Detalles</a></button>
                                     <small class="text-muted">{{blog.fecha_pub}}</small>
                                 </div>
                             </div>

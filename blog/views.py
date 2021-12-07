@@ -10,3 +10,4 @@ def showBlogs(request):
 def detalle(request, blogs_id):
     det_blog=get_object_or_404(Blog, pk=blogs_id)
     return render(request, 'blog/detalle.html',{'blog':det_blog})
+ 

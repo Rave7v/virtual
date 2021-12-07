@@ -18,11 +18,15 @@ from django.urls import path, include
 from django.conf import settings 
 from django.conf.urls.static import static 
 import jobs.views
+from jobs.views import enviarcorreo
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', jobs.views.home, name='home'),
+      path('', jobs.views.home, name='home'),
+    path('<int:jobs_id>/', jobs.views.detallej, name='detallej'),
     path('blog/', include('blog.urls')),
-    path('<int:blogs_id>/', jobs.views.detalle, name='detalle'),
+    path('enviarcorreo/', enviarcorreo, name='enviarcorreo'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
